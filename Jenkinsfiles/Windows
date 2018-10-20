@@ -1,0 +1,28 @@
+#!/usr/bin/env groovy
+
+pipeline {
+    agent none
+
+    options {
+      timeout(time: 3, unit: 'HOURS') 
+    }
+
+    stages {
+	    stage('Source') {
+        steps {
+				  node("sinter-dev1") {
+					  git([url: 'https://github.com/oscarlab/sinter.git', branch: 'master', credentialsId: 'Jenkins bot to post on GitHub PRs'])
+				}
+      }
+        
+      stage('Build') {
+		  }
+    
+	    stage('Testing') {
+      }
+		}
+    
+    post { 
+      # Cleanup
+    }
+}
