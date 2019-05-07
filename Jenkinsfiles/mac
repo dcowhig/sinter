@@ -1,0 +1,9 @@
+echo "Build OSXScraper..."
+cd osxscraper
+xcodebuild -list -project OSXScraper.xcodeproj
+xcodebuild -scheme OSXScraper build
+echo "Build OSXProxy..."
+cd ../osxproxy
+xcodebuild -list -project OSXProxy.xcodeproj
+xcodebuild -scheme OSXProxy build
+echo "Test(s) go here"
