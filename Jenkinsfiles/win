@@ -30,7 +30,7 @@ pipeline {
         echo "Prepare to build windowsproxy..."
         cd ..\\windowsproxy
         mkdir src\bin\\Debug
-        copy C:\\jenkins\\Gma.System.MouseKeyHook.dll src\\bin\\Debug\\ /y
+        xcopy C:\\jenkins\\Gma.System.MouseKeyHook.dll src\\bin\\Debug\\ /y
        
         echo "Check project for VS upgrade..."
         devenv WindowsProxyClient.sln /upgrade
